@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment1</title>
+    <style>
+        #colorButton{
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">DOM Manipulation with JavaScript - Assignment 1</h1>
+
+    <button id="colorButton">
+        Click here to read about me.
+    </button>
+    
+    <script>
+        //button element
+        let button = document.getElementById("colorButton")
+
+        //a variable for tracking the state
+        let state = 0;
+
+        //arrays for the texts, fonts, and colors options
+        let texts = ["Oh! Abba messed with my fonts and changed my box color(very uncool👎🏾)😡, please touch the box to change back", "A tech enthusiast with a penchant for purple. I'm the queen of awesomeness. Even Abba is taking notes on my coolness!😎🥰😜...click to see more"];
+        let colors = ["pink","blueviolet"];
+        let fonts = ["normal","italic"];
+
+        //an event listener for the button variable
+        button.addEventListener("click", function() {
+            state = 1 - state;//this will toggle the state between 0 and 1
+            //now change the button's text, color and font based on the active state.
+            button.textContent = texts[state];
+            button.style.backgroundColor = colors[state];
+            button.style.fontStyle = fonts[state];
+        });
+    </script>
+</body>
+</html>
